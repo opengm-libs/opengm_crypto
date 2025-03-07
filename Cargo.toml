@@ -1,0 +1,59 @@
+[package]
+edition = "2024"
+name = "opengm_crypto"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# subtle = {version = "2.5", default-features = false}
+subtle = {version = "2.5"}
+thiserror = {version = "2.0", default-features = false}
+num = {version = "0.4", features = ["alloc"]}
+rand = {version = "0.9", features = ["alloc"]}
+ctor = {version = "0.4", optional = true}
+# Arbitrary-precision integers, rational, floating-point and complex numbers based on GMP, MPFR and MPC.
+rug = {version = "1.24", optional = true}
+# error = {path = "../error"}
+# opengm-common = {version = "0.1.0", path="../common"}
+# opengm-error = {version = "0.1.0", path="../error"}
+# byteorder = "1.4"
+# thiserror = "1.0"
+
+# base64 = "0.20"
+# rand_chacha = "0.3"
+# num-integer = {version = "0.1"}
+# generic-array = "0.14"
+# getrandom = "0.2"
+# crypto-bigint = "0.4"
+# error-chain = "0.12.4"
+
+[dev-dependencies]
+hex = {version = "0.4"}
+hex-literal = "1.0"
+# rand = {version = "0.8"}
+# num-bigint = {version = "0.4"}
+# num-traits = {version = "0.2"}
+# rand_core = "0.6"
+# criterion = "0.5"
+# static_assertions = "1.1"
+# bencher = "0.1.5"
+# futures = "0.3"
+
+[features]
+default = ["std"]
+# default = []
+std = ["rand/std", "rand/os_rng", "ctor", "thiserror/std", "num/std"]
+# alloc = ["rand/alloc"]
+# build-binary = ["rand", "rug"]
+
+[profile.test]
+opt-level = 2
+
+# [[bin]]
+# name = "sm2"
+# path = "bin/main.rs"
+# required-features = ["build-binary"] 
+
+# [profile.release]
+# debug = true
