@@ -2,6 +2,15 @@
 edition = "2024"
 name = "opengm_crypto"
 version = "0.1.0"
+authors = ["The OpenGM Group <opengm at yeah.net>"]
+description = "The Chinese GM/T cryptographic algorithems"
+keywords = [
+    "SM2",
+    "SM3",
+    "SM4"
+]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/opengm-libs/opengm_crypto"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
